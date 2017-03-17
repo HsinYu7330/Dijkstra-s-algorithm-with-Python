@@ -1,11 +1,12 @@
 ##### 20170314 ######
+# Dijkstra's algorithm with Python
 import csv
 import networkx as nx
 
-movie_nodes = open('C:/Python/project/data/hw0b/movie_nodes.txt', 'r', encoding = 'utf8')
+movie_nodes = open('C:/Python/project/data/nodes.txt', 'r', encoding = 'utf8')
 dictNodes = dict([row for row in csv.reader(movie_nodes, delimiter = '\t')])
 
-movie_edges = nx.read_weighted_edgelist('C:/Python/project/data/hw0b/movie_edgesW.txt', nodetype = int, delimiter = '\t')
+movie_edges = nx.read_weighted_edgelist('C:/Python/project/data/edgesW.txt', nodetype = int)
 
 
 N, K = movie_edges.order(), movie_edges.size()
@@ -75,7 +76,7 @@ def myDijkstra(Graph, start, end):
 
 RecordL = []
 
-SearchL = [('Emma Watson', 'Leonardo DiCaprio'), ('Tom Cruise', 'Jennifer Lawrence'), ('Emma Watson', 'Johnny Depp'), ('Arnold Schwarzenegger', 'Meg Ryan'), ('Angelina Jolie', 'Megan Fox')]
+SearchL = [('Ann Blyth', 'Lou Myers (actor)'), ('Ann Blyth', 'Jane Anderson')]
 # SearchL = [('Tom Cruise', 'Jennifer Lawrence')]
 
 [RecordL.append(myDijkstra(movie_edges, j[0], j[1])) for j in SearchL]
