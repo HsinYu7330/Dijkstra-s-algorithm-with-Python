@@ -1,5 +1,4 @@
 ##### 20170314 ######
-# hw0b_movie
 import csv
 import networkx as nx
 
